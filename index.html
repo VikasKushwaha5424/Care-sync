@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CareGiver Services</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <img src="l.png" class="logo" alt="App Logo">
+      <h1>CareGiver Services</h1>
+    </header>
+
+    <!-- Login Page -->
+    <section id="login">
+      <h2>Login</h2>
+      <form id="login-form">
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <button type="submit">Login</button>
+      </form>
+      <p>Don't have an account? <a href="#" id="signup-link">Sign up</a></p>
+    </section>
+
+    <!-- Sign-up Page -->
+    <section id="signup" style="display: none;">
+      <h2>Sign Up</h2>
+      <form id="signup-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="email" placeholder="Email" required>
+        <input type="password" placeholder="Password" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <button type="submit">Sign Up</button>
+      </form>
+      <p>Already have an account? <a href="#" id="login-link">Login</a></p>
+    </section>
+
+    <!-- Service Selection -->
+    <section id="service-selection" style="display: none;">
+      <h2>Select Service Type</h2>
+      <button id="temporary-caregiver">Temporary Caregiver</button>
+      <button id="fulltime-caregiver">Full-Time Caregiver</button>
+      <button id="child-care-service">Child Care Service</button>
+      <button id="apply-for-job">Apply for Job</button>
+    </section>
+
+    <!-- Temporary Caregiver -->
+    <section id="temp-caregiver" style="display: none;">
+      <h2>Temporary Caregiver Service</h2>
+      <form id="temp-form">
+        <input type="text" placeholder="Patient Name" required>
+        <label for="from-date">From Date:</label>
+        <input type="date" id="from-date" required>
+        <label for="to-date">To Date:</label>
+        <input type="date" id="to-date" required>
+        <label for="from-time">From Time:</label>
+        <input type="time" id="from-time" required>
+        <label for="to-time">To Time:</label>
+        <input type="time" id="to-time" required>
+        <input type="text" placeholder="Address" required>
+        <input type="text" placeholder="Medical Condition" required>
+        <select id="gender" required>
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <textarea placeholder="Special Notes (e.g., allergies, specific care instructions)" rows="4"></textarea>
+        <button type="submit">Next</button>
+      </form>
+    </section>
+
+    <!-- Full-Time Caregiver -->
+    <section id="fulltime-caregiver-section" style="display: none;">
+      <h2>Full-Time Caregiver Service</h2>
+      <form id="fulltime-form">
+        <input type="text" placeholder="Patient Name" required>
+        <input type="text" placeholder="Medical Condition" required>
+        <input type="file" accept="application/pdf" required>
+        <input type="date" id="full-from-date" required>
+        <input type="time" placeholder="Start Time" required>
+        <select id="gender" required>
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <textarea placeholder="Special Notes (e.g., allergies, specific care instructions)" rows="4"></textarea>
+        <button type="submit">Next</button>
+      </form>
+    </section>
+
+    <!-- Child Care Service -->
+    <section id="child-care-service-section" style="display: none;">
+      <h2>Child Care Service</h2>
+      <form id="child-care-form">
+        <input type="text" placeholder="Child Name" required>
+        <label for="child-age">Child Age:</label>
+        <input type="number" id="child-age" placeholder="Age" required>
+        <label for="child-gender">Child Gender:</label>
+        <select id="child-gender" required>
+          <option value="">Select Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <label for="child-from-date">From Date:</label>
+        <input type="date" id="child-from-date" required>
+        <label for="child-to-date">To Date:</label>
+        <input type="date" id="child-to-date" required>
+        <label for="child-from-time">From Time:</label>
+        <input type="time" id="child-from-time" required>
+        <label for="child-to-time">To Time:</label>
+        <input type="time" id="child-to-time" required>
+        <input type="text" placeholder="Address" required>
+        <textarea placeholder="Special Notes (e.g., allergies, specific care instructions)" rows="4"></textarea>
+        <button type="submit">Next</button>
+      </form>
+    </section>
+
+    <!-- Pricing Table -->
+    <section id="pricing-table" style="display: none;">
+      <h2>Pricing Details</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Service Type</th>
+            <th>Cost per Hour (₹)</th>
+            <th>Cost per Day (₹)</th>
+            <th>Day Time (₹)</th>
+            <th>Night Time (₹)</th>
+            <th>Full-Time Stay (₹)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Temporary Caregiver</td>
+            <td>200</td>
+            <td>1500</td>
+            <td>1200</td>
+            <td>1800</td>
+            <td>3000</td>
+          </tr>
+          <tr>
+            <td>Full-Time Caregiver</td>
+            <td>250</td>
+            <td>2000</td>
+            <td>1500</td>
+            <td>2200</td>
+            <td>4000</td>
+          </tr>
+          <tr>
+            <td>Child Care</td>
+            <td>150</td>
+            <td>1000</td>
+            <td>800</td>
+            <td>1200</td>
+            <td>2500</td>
+          </tr>
+        </tbody>
+      </table>
+      <button id="back-to-service-selection">Back</button>
+    </section>
+
+    <!-- Payment Page -->
+    <section id="payment-page" style="display: none;">
+      <h2>Payment Details</h2>
+      <p>Select a payment method:</p>
+      <p id="total-payment">Total Payment: ₹0</p>
+      <div class="payment-options">
+        <button id="credit-debit-card">Pay with Credit/Debit Card</button>
+        <button id="upi">Pay with UPI</button>
+      </div>
+      <form id="payment-form" style="display: none;">
+        <input type="text" placeholder="Card Number / UPI ID" required>
+        <input type="text" placeholder="Cardholder Name" required>
+        <input type="text" placeholder="Expiry Date" required>
+        <input type="text" placeholder="CVV" required>
+        <button type="submit">Proceed to Pay</button>
+      </form>
+      <!-- QR Code Display for UPI -->
+      <div id="upi-qr" style="display: none; text-align: center;">
+        <h3>Scan this QR Code to Pay</h3>
+        <img src="qr.jpg" alt="UPI QR Code" style="max-width: 200px;">
+        <button type="submit">Proceed to Pay</button>
+      </div>
+    </section>
+
+    <!-- Payment Success Page -->
+    <section id="payment-success" style="display: none;">
+      <h2>Payment Successful!</h2>
+      <p>Thank you for using our services.</p>
+      <p>Redirecting to Caretaker details...</p>
+    </section>
+
+    <!-- Caretaker Details Page -->
+    <section id="caretaker-details" style="display: none;">
+      <h2>Assigned Caretaker Details</h2>
+      <div id="caretaker-info"></div>
+      <label for="language-select">Select Preferred Language:</label>
+      <select id="language-select">
+        <option value="en">English</option>
+        <option value="hi">हिंदी (Hindi)</option>
+        <option value="as">অসমীয়া (Assamese)</option>
+        <option value="bn">বাংলা (Bengali)</option>
+        <option value="gu">ગુજરાતી (Gujarati)</option>
+        <option value="kn">ಕನ್ನಡ (Kannada)</option>
+        <option value="ks">کٲشُر (Kashmiri)</option>
+        <option value="kok">कोंकणी (Konkani)</option>
+        <option value="ml">മലയാളം (Malayalam)</option>
+        <option value="mr">मराठी (Marathi)</option>
+        <option value="ne">नेपाली (Nepali)</option>
+        <option value="or">ଓଡ଼ିଆ (Odia)</option>
+        <option value="pa">ਪੰਜਾਬੀ (Punjabi)</option>
+        <option value="sa">संस्कृतम् (Sanskrit)</option>
+        <option value="ta">தமிழ் (Tamil)</option>
+        <option value="te">తెలుగు (Telugu)</option>
+        <option value="ur">اردو (Urdu)</option>
+      </select>
+      <button id="back-to-login">Back to Login</button>
+    </section>
+
+    <!-- Apply for Job Page -->
+    <section id="apply-job" style="display: none;">
+      <h2>Apply for Caregiver Job</h2>
+      <form id="apply-form">
+        <input type="text" placeholder="Full Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <input type="text" placeholder="City" required>
+        <input type="text" placeholder="Pincode" id="pincode" required>
+        <input type="text" placeholder="Previous Experience" required>
+        <input type="email" placeholder="Email ID" required>
+        <select required>
+          <option value="">Gender</option>
+          <option value="male">Male</option>
+          <option value="female">Female</option>
+        </select>
+        <input type="file" accept="application/pdf" required>
+        <button type="submit">Submit</button>
+      </form>
+    </section>
+
+    <!-- SOS Button -->
+    <button id="sos-button" class="sos-button">SOS</button>
+
+    <!-- SOS Alert Page -->
+    <section id="sos-alert" style="display: none;">
+      <h2>Emergency Alert</h2>
+      <p>Ambulance and support team has been informed.</p>
+    </section>
+
+    <!-- Job Application Thank You Page -->
+    <section id="thank-you" style="display: none;">
+      <h2>Thank You for Applying!</h2>
+      <p>Our team will contact you soon.</p>
+      <button id="back-to-login-from-thankyou">Back to Login</button>
+    </section>
+
+    <!-- Terms and Conditions Page -->
+    <section id="terms-and-conditions" style="display: none;">
+      <h2>Terms and Conditions</h2>
+      <p>
+        1. Ethics and Moral Conduct: Both customers and service providers are expected to maintain high ethical standards.<br>
+        2. Data Privacy: We will keep your data safe and secure.<br>
+        3. Service Quality: We strive to provide the best care services.<br>
+        4. Cancellation Policy: Cancellations must be made 24 hours in advance.<br>
+        5. Payment: Payments are non-refundable once services are rendered.
+      </p>
+      <button id="back-to-login-from-terms">Back to Login</button>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
